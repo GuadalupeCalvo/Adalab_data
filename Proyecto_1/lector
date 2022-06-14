@@ -1,0 +1,73 @@
+import os
+import re
+import shutil
+
+
+def lector(origen):
+
+    # INICIO
+    print("¡Hola! Con este programa vamos a preparar tu archivo .txt para que sea exportable a MySQL. Asegúrate de que el archivo a convertir está en esta misma carpeta:")
+    print(os.getcwd(), '\n')
+
+    doc_nuevo = "./doc_nuevo.txt"
+    archivo = os.path.basename(origen)
+
+    # BUSCAMOS EL ARCHIVO
+
+    try:
+        archivo in os.listdir()
+        print("Hemos encontrado tu archivo, ¡te lo preparamos enseguida! \n")
+    except:
+        print("El archivo no está en la carpeta correcta. Asegúrate de trasladarlo a:")
+        print(os.getcwd(), '\n')
+
+    # LECTURA Y LIMPIEZA DE ARCHIVO
+    shutil.copyfile(origen, doc_nuevo)
+    with open(doc_nuevo, "r") as f:
+
+        f2 = f.read()
+        parrafos = re.findall('\n', f2)
+        _1 = re.sub('\n', "\n\n\n\n", f2)
+
+        sep = re.findall("\; |\, ", f2)
+        _2 = re.sub("\; |\, ", "  KIWI DA LA CARA  ", _1)
+        # print(_1)
+
+    with open(doc_nuevo, "w") as a:
+        (a.write(_2))
+
+        # print(_1)
+        #lista_parr = re.finditer(".*\n\n\n\n", f2)
+        # print(lista_parr)
+
+        # for parr in lista_parr:
+        #
+        #_2 = re.sub("\;|\,", " COLUMNA: ", f2)
+        # print(f2)
+
+        # print(lista_parr)
+        # ESTOS CAMBIOS SOLO ME PASAN EN LA TERMINAL; NO EN EL DOC. ENTIENDO QUE ES PORQUE ESTAMOS EN MODO READ (PERO ?¿)
+
+        #orden1 = re.findall("\s$\n", f.read())
+        # print(orden1)
+        #orden2 = re.findall(";", f.read())
+        #error1 = re.findall("\W\d\d?\d?\d?\d?\;[A-Z]", f.read())
+        # print(error1)
+
+        # error1 = re.findall("\W\d\d?\.*", f.read())
+
+        # BUSCAR ERRORES
+        # CORREGIR ERRORES
+        # TRASLADAR ARCHIVO NUEVO A documentos_limpios
+        # print(f.readlines(5))
+
+
+origen = "./data.txt"
+lector(origen)
+
+
+# try:
+#   os.mkdir("./documentos_limpios")
+#   print("La carpeta 'documentos_limpios' ha sido creada. Allí encontrarás, en breves, tus documentos  preparados. \n")
+# except:
+#   print("La carpeta 'documentos_limpios' ya existe. Allí encontrarás, en breves, tus documentos preparados. \n")
