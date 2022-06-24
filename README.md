@@ -24,7 +24,7 @@ Limpieza -> Diferentes herramientas para limpiar el Dataset de ataques de tiburo
 
 # Modulo 3
 
--Regresión -> Empezamos con las regresiones y predicciones.
+Regresión -> Empezamos con las regresiones y predicciones.
 Test estadísticos -> Hacemos pruebas estadísticas en otro dataset diferente, como las diferencias entre covarianza y correlación.
 
 # Proyecto 1
@@ -34,3 +34,6 @@ En este proyecto, el equipo formado por 4 compañeras, nos encontramos con difer
 # Proyecto 2
 
 En este proyecto, continuamos con algunos datos del proyecto anterior, ya que pertenecen a una encuesta sobre personas que trabajan en el mundo Tech por todo el mundo, y en el que nos centramos en resaltar la gran diferencia entre hombres y mujeres.
+
+# Proyecto 3
+ En este proyecto, el cliente era una empresa de alquiler de bicicletas que, aportando una base de datos con datos meteorológicos entre otros de los años 2018 y 2019, quiere saber la progresión de su empresa, tanto en estos años como en los venideros.
